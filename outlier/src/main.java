@@ -9,6 +9,7 @@ import SpecuficClass.NormalDistribution;
 
 public class main {
     public static void main(String[] args) {
+        //
         originalPoint  a = new originalPoint(1,1,2,0,0);
         originalPoint  b = new originalPoint(2,2,0,1,0);
         originalPoint  c = new originalPoint(3,3,4,2,0);
