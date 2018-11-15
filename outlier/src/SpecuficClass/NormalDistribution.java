@@ -29,8 +29,9 @@ public class NormalDistribution implements AfterCalculate {
     public void CalculateVariance(ArrayList<DistancePoint> distancePointArrayList){
         double sum=0;
         for (int i = 0 ; i<distancePointArrayList.size();i++){
-            sum += (distancePointArrayList.get(i).getDistance()-average)*(distancePointArrayList.get(i).getDistance()-average);
+            sum += Math.pow((distancePointArrayList.get(i).getDistance()-average),2);
         }
+        System.out.println("sum == " + sum);
         System.out.println("未改变前"+sum/distancePointArrayList.size());
         variance = Math.sqrt(sum/distancePointArrayList.size());
         System.out.println("方差为"+variance);

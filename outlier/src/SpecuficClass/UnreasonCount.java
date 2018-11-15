@@ -11,7 +11,7 @@ public class UnreasonCount implements Standard {
     @Override
     public void StandardCount() {
         ArrayList<OriginalPoint> originalPointArrayList = OriginalPointList.getListPoint();
-        int count = originalPointArrayList.size()/2;
+        int count = OriginalPointList.getListPoint().size()/4;//
         for(int i = 0;i<originalPointArrayList.size();i++){
               if(count<=originalPointArrayList.get(i).getUnreasonCount()){ //不符合
                   originalPointArrayList.remove(i); //移除

@@ -20,8 +20,8 @@ public class Distance  implements Calculate {
         for(int i = 0;i<originalPointArrayList.size();i++){
             for(int j = i+1;j<originalPointArrayList.size();j++){
                 double result = CalculateDistance(originalPointArrayList.get(i),originalPointArrayList.get(j));
+                System.out.println("result= "+result);
                 DistancePointList.Add(new DistancePoint(result,originalPointArrayList.get(i).getId(),originalPointArrayList.get(j).getId()));
-
             }
 
         }
@@ -29,7 +29,8 @@ public class Distance  implements Calculate {
 
     //距离公式
     public double CalculateDistance(OriginalPoint first, OriginalPoint second){
-        double temp = first.getX()*second.getX() + first.getY()*second.getY() +  first.getZ()*second.getZ();
+
+        double temp = Math.pow(first.getX()-second.getX(),2) + Math.pow(first.getY()-second.getY(),2)+Math.pow(first.getZ()-second.getZ(),2);
         return Math.sqrt(temp);
     }
 

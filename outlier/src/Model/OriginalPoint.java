@@ -2,16 +2,19 @@ package Model;
 
 public class OriginalPoint {
 
-    double x,y,z; //坐标
-    int id; // 点的id；
-    int unreasonCount; // 不符合"聚合"的标准次数
+    private double x,y,z; //坐标
+    private int id; // 点的id；
+    private int UnreasonCount; // 不符合"聚合"的标准次数
 
-    public OriginalPoint(double x, double y, double z, int id, int unreasonCount){
+    private static int idCount = 0;
+
+    public OriginalPoint(double x, double y, double z){
         this.x = x;
         this.y = y;
         this.z = z;
-        this.id = id;
-        this.unreasonCount = unreasonCount;
+        this.id = idCount++;
+        this.UnreasonCount = 0;
+
     }
     public int getId() {
         return id;
@@ -37,11 +40,11 @@ public class OriginalPoint {
     }
 
     public int getUnreasonCount() {
-        return unreasonCount;
+        return UnreasonCount;
     }
 
     public void setUnreasonCount(int unreasonCount) {
-        this.unreasonCount = unreasonCount;
+        this.UnreasonCount = unreasonCount;
     }
     public double getX() {
         return x;

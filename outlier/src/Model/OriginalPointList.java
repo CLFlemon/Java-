@@ -18,7 +18,7 @@ public class OriginalPointList {
      // 输出List的具体信息 方便调试
      public static void Show(){
           for(int i = 0;i<ListPoint.size();i++){
-              System.out.println(ListPoint.get(i).x+" "+ListPoint.get(i).y+" "+ ListPoint.get(i).z+" "+ListPoint.get(i).id+" "+ListPoint.get(i).unreasonCount);
+              System.out.println(ListPoint.get(i).getX()+" "+ListPoint.get(i).getY()+" "+ ListPoint.get(i).getZ()+" "+ListPoint.get(i).getId()+" "+ListPoint.get(i).getUnreasonCount());
           }
      }
 }
