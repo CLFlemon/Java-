@@ -11,28 +11,28 @@ public class NormalDistribution implements AfterCalculate {
     private static double average;
     private static double variance; //方差
     @Override
-    public void analyes(Object c) {
-        ArrayList<DistancePoint> distancePointsList = (ArrayList<DistancePoint>) c;
-        CalculateAverage(distancePointsList);
-        CalculateVariance(distancePointsList);
+    public void analyes() {
+        ArrayList<DistancePoint> distancePointArrayList = DistancePointList.getDistancepointlist();
+        CalculateAverage(distancePointArrayList);
+        CalculateVariance(distancePointArrayList);
     }
 
-    public void CalculateAverage(ArrayList<DistancePoint> distancePointList){
+    public void CalculateAverage(ArrayList<DistancePoint> distancePointArrayList){
         double sum = 0;
-        for(int i = 0;i<distancePointList.size();i++){
-            sum += distancePointList.get(i).getDistance();
+        for(int i = 0;i<distancePointArrayList.size();i++){
+            sum += distancePointArrayList.get(i).getDistance();
         }
-        average = sum/distancePointList.size();
+        average = sum/distancePointArrayList.size();
         System.out.println("平均值为="+average);
     }
 
-    public void CalculateVariance(ArrayList<DistancePoint> distancePointList){
+    public void CalculateVariance(ArrayList<DistancePoint> distancePointArrayList){
         double sum=0;
-        for (int i = 0 ; i<distancePointList.size();i++){
-            sum += (distancePointList.get(i).getDistance()-average)*(distancePointList.get(i).getDistance()-average);
+        for (int i = 0 ; i<distancePointArrayList.size();i++){
+            sum += (distancePointArrayList.get(i).getDistance()-average)*(distancePointArrayList.get(i).getDistance()-average);
         }
-        System.out.println("未改变前"+sum/distancePointList.size());
-        variance = Math.sqrt(sum/distancePointList.size());
+        System.out.println("未改变前"+sum/distancePointArrayList.size());
+        variance = Math.sqrt(sum/distancePointArrayList.size());
         System.out.println("方差为"+variance);
     }
 

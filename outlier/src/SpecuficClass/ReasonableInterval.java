@@ -2,8 +2,8 @@ package SpecuficClass;
 import InterfaceClass.Check;
 import Model.DistancePoint;
 import Model.DistancePointList;
-import Model.List;
-import Model.originalPoint;
+import Model.OriginalPointList;
+import Model.OriginalPoint;
 
 import java.util.ArrayList;
 
@@ -14,8 +14,8 @@ public class ReasonableInterval implements Check {
 
 
     @Override
-    public void isReason(Object c) {
-        ArrayList<DistancePoint> distancePointArrayList = (ArrayList<DistancePoint>) c;
+    public void isReason() {
+        ArrayList<DistancePoint> distancePointArrayList = DistancePointList.getDistancepointlist();
         double left = NormalDistribution.getAverage()-3*NormalDistribution.getAverage(); //左边界
         double right = NormalDistribution.getAverage()+3*NormalDistribution.getVariance(); //右边界
         for(int i = 0;i<=distancePointArrayList.size();i++){ // 下面是不符合的
@@ -26,7 +26,7 @@ public class ReasonableInterval implements Check {
     }
 
     public  void Tag(DistancePoint distancePoint){
-        ArrayList<originalPoint> ListPoint = List.getListPoint();
+        ArrayList<OriginalPoint> ListPoint = OriginalPointList.getListPoint();
 
         for(int i = 0;i<ListPoint.size();i++){
             if(ListPoint.get(i).getId() == distancePoint.getFirstId() || ListPoint.get(i).getId()== distancePoint.getSecondId()){

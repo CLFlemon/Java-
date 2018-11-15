@@ -6,5 +6,5 @@ package InterfaceClass;
  * 方便应用不同的业务场景 如 距离 角度等 Demon用的是距离
  */
 public interface Calculate {
-     void calculate(Object c);
+     void calculate();
 }

@@ -5,5 +5,5 @@ package InterfaceClass;
  * 如Demons得到是方差，平均值
  */
 public interface AfterCalculate {
-    void analyes(Object c);
+    void analyes();
 }
