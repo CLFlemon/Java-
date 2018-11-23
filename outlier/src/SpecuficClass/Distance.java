@@ -20,7 +20,7 @@ public class Distance  implements Calculate {
         for(int i = 0;i<originalPointArrayList.size();i++){
             for(int j = i+1;j<originalPointArrayList.size();j++){
                 double result = CalculateDistance(originalPointArrayList.get(i),originalPointArrayList.get(j));
-                System.out.println("result= "+result);
+            //    System.out.println("result= "+result);
                 DistancePointList.Add(new DistancePoint(result,originalPointArrayList.get(i).getId(),originalPointArrayList.get(j).getId()));
             }
 
